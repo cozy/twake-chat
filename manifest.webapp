@@ -1,7 +1,7 @@
 {
   "name": "Twake Chat",
-  "slug": "twake-chat",
-  "icon": "twake-chat.png",
+  "slug": "twakechat",
+  "icon": "twakechat.png",
   "categories": [],
   "version": "0.1.0",
   "licence": "AGPL-3.0",
