@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import AppLayout from 'src/components/AppLayout'
+import AppLayout from '@/components/AppLayout'
 
 const routes = [
   {

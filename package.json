@@ -5,13 +5,13 @@
     "node": "~16 || ~20"
   },
   "scripts": {
-    "analyze": "COZY_SCRIPTS_ANALYZER=true yarn build",
+    "build": "rsbuild build",
+    "watch": "rsbuild build --watch --mode development",
+    "start": "rsbuild dev",
+    "analyze": "RSDOCTOR=true yarn build",
     "lint": "yarn lint:js && yarn lint:styles",
-    "lint:js": "cs lint '{src,test}/**/*.{js,jsx,ts,tsx}'",
-    "lint:styles": "stylint src/styles --config ./.stylintrc",
-    "build": "cs build --barV7 false",
-    "watch": "cs watch --barV7 false",
-    "test": "env NODE_ENV=test cs test --verbose --coverage"
+    "lint:js": "eslint '{src,test}/**/*.{js,jsx,ts,tsx}'",
+    "lint:styles": "stylint src/styles --config ./.stylintrc"
   },
   "repository": {
     "type": "git",
@@ -28,13 +28,14 @@
     "@babel/eslint-parser": "^7.22.11",
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.22.15",
+    "@rsbuild/core": "^1.1.6",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
     "babel-preset-cozy-app": "^2.1.0",
-    "cozy-scripts": "^8.2.0",
+    "cozy-tsconfig": "^1.8.1",
     "eslint": "8.48.0",
     "eslint-config-cozy-app": "6.1.0",
     "eslint-config-prettier": "9.0.0",
@@ -48,7 +49,9 @@
     "prop-types": "15.8.1",
     "react-hot-loader": "4.13.0",
     "react-test-renderer": "18.2.0",
-    "terser-webpack-plugin": "1.4.4",
+    "rsbuild-config-cozy-app": "^0.4.0",
+    "stylint": "1.5.9",
+    "stylus-config-cozy-app": "^0.1.0",
     "typescript": "4.9.5"
   },
   "dependencies": {

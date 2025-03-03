@@ -5,7 +5,7 @@ import { useClient } from 'cozy-client'
 import Typography from 'cozy-ui/transpiled/react/Typography'
 import useBreakpoints from 'cozy-ui/transpiled/react/providers/Breakpoints'
 
-import { useTwakeBridge } from '../libs/twakeBridge'
+import { useTwakeBridge } from '@/libs/twakeBridge'
 
 const AppLayout = () => {
   const { isMobile } = useBreakpoints()

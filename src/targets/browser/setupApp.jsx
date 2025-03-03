@@ -1,11 +1,12 @@
 import { createRoot } from 'react-dom/client'
-import schema from 'src/doctypes'
 
 import CozyClient from 'cozy-client'
 import flag from 'cozy-flags'
 import { initTranslation } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import manifest from '../../../manifest.webapp'
+
+import schema from '@/doctypes'
 
 /**
  * Make and returns cozy client instance
@@ -43,7 +44,7 @@ const setupApp = () => {
   const client = makeClient(container)
   const locale = JSON.parse(container.dataset.cozy)?.locale
   const lang = getDataOrDefault(locale, 'en')
-  const polyglot = initTranslation(lang, lang => require(`locales/${lang}`))
+  const polyglot = initTranslation(lang, lang => require(`@/locales/${lang}`))
   client.registerPlugin(flag.plugin)
 
   return { root, client, lang, polyglot }
