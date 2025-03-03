@@ -16,6 +16,16 @@
       "folder": "/",
       "index": "index.html",
       "public": false
+    },
+    "/web": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
+    },
+    "/web/": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
     }
   },
   "permissions": {
@@ -27,6 +37,11 @@
     "settings": {
       "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
       "type": "io.cozy.settings",
+      "verbs": ["GET"]
+    },
+    "contacts": {
+      "description": "To demostrate what is possible",
+      "type": "io.cozy.contacts",
       "verbs": ["GET"]
     }
   }

@@ -5,12 +5,30 @@ import 'cozy-bar/dist/stylesheet.css'
 
 import 'src/styles/index.styl'
 import React from 'react'
-// import { render } from 'react-dom'
 import AppProviders from 'src/components/AppProviders'
 import setupApp from 'src/targets/browser/setupApp'
 import AppRouter from 'src/components/AppRouter'
 
-const init = function () {
+document.getElementById('embeddedApp').onload = function () {
+  const event = new Event('iframeLoaded')
+  document.dispatchEvent(event)
+}
+
+setTimeout(() => {
+  const event = new Event('iframeLoaded')
+  document.dispatchEvent(event)
+}, 1000)
+
+document.addEventListener('iframeLoaded', () => {
+  init()
+  hasDoneInit = true
+})
+
+let hasDoneInit = false
+
+const init = () => {
+  if (hasDoneInit) return
+
   const { root, client, lang, polyglot } = setupApp()
 
   root.render(
@@ -18,13 +36,4 @@ const init = function () {
       <AppRouter />
     </AppProviders>
   )
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  init()
-})
-
-if (module.hot) {
-  init()
-  module.hot.accept()
 }

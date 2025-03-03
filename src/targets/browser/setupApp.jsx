@@ -1,4 +1,3 @@
-import memoize from 'lodash/memoize'
 import { createRoot } from 'react-dom/client'
 import schema from 'src/doctypes'
 
@@ -38,7 +37,7 @@ const getDataOrDefault = (data, defaultData) =>
 /**
  * Memoize this function in its own file so that it is correctly memoized
  */
-const setupApp = memoize(() => {
+const setupApp = () => {
   const container = document.querySelector('[role=application]')
   const root = createRoot(container)
   const client = makeClient(container)
@@ -48,6 +47,6 @@ const setupApp = memoize(() => {
   client.registerPlugin(flag.plugin)
 
   return { root, client, lang, polyglot }
-})
+}
 
 export default setupApp

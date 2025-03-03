@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import { CozyProvider, createMockClient } from 'cozy-client'
 import AlertProvider from 'cozy-ui/transpiled/react/providers/Alert'
@@ -12,9 +12,9 @@ const AppLike = ({ children, client }) => (
   <CozyProvider client={client || createMockClient({})}>
     <I18n dictRequire={() => enLocale} lang="en">
       <BreakpointsProvider>
-        <HashRouter>
+        <BrowserRouter>
           <AlertProvider>{children}</AlertProvider>
-        </HashRouter>
+        </BrowserRouter>
       </BreakpointsProvider>
     </I18n>
   </CozyProvider>

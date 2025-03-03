@@ -1,23 +1,16 @@
 import React from 'react'
-import { RouterProvider, createHashRouter } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import AppLayout from 'src/components/AppLayout'
-import { Frame } from 'src/components/Views/Frame'
 
 const routes = [
   {
-    path: '/',
-    element: <AppLayout />,
-    children: [
-      {
-        path: '/',
-        element: <Frame />
-      }
-    ]
+    path: '*',
+    element: <AppLayout />
   }
 ]
 
 const AppRouter = () => {
-  const router = createHashRouter(routes)
+  const router = createBrowserRouter(routes)
   return <RouterProvider router={router} />
 }
 

@@ -1,14 +1,12 @@
 @require 'settings/breakpoints.styl'
 
-*, ::before, ::after
-    box-sizing border-box
+body
+    display: flex;
+    height: 100vh;
 
+#embeddedApp
+    display: flex;
+    flex: 1;
 
-html, body, main, main > div[role=main]
-    +small-screen()
-        height 100% !important
-        overflow hidden
-
-.coz-bar-container
-    align-items center
-
+    +medium-screen()
+        padding-top: 3rem;
