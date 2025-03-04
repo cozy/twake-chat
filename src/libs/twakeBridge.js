@@ -6,7 +6,8 @@ import { Q, useClient } from 'cozy-client'
 
 const extractPathname = url => {
   if (url.startsWith('http')) {
-    return new URL(url).hash
+    const objectUrl = new URL(url)
+    return objectUrl.pathname + objectUrl.hash + objectUrl.search
   } else {
     return url
   }
@@ -19,7 +20,9 @@ export const useTwakeBridge = origin => {
 
   useEffect(() => {
     const destUrl = new URL(document.getElementById('embeddedApp').src)
+    destUrl.pathname = location.pathname
     destUrl.hash = location.hash
+    destUrl.search = location.search
     const currentIframeUrl = new URL(document.getElementById('embeddedApp').src)
 
     if (destUrl.toString() !== currentIframeUrl.toString()) {
