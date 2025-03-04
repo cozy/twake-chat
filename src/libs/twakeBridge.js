@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import * as Comlink from 'comlink'
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -30,6 +31,24 @@ export const useTwakeBridge = origin => {
     }
   }, [])
 
+  // Proof of concepts of Twake <-> Cozy communication
+  useEffect(() => {
+    const exposedMethods = {
+      getContacts: async () => {
+        const { data } = await client.query(Q('io.cozy.contacts'))
+
+        return data
+      }
+    }
+
+    Comlink.expose(
+      exposedMethods,
+      Comlink.windowEndpoint(
+        document.getElementById('embeddedApp').contentWindow
+      )
+    )
+  }, [client])
+
   useEffect(() => {
     const handleMessage = async event => {
       console.log('🟢 Event received from Twake bridge', event.data)
@@ -57,17 +76,6 @@ export const useTwakeBridge = origin => {
         const url = extractPathname(messageData.url)
         console.log('🟢 Replacing route because popState:', url)
         navigate(url, { replace: true })
-      }
-
-      // Proof of concepts of Twake <-> Cozy communication
-      if (messageData.type === 'getContacts') {
-        const { data } = await client.query(Q('io.cozy.contacts'))
-        document
-          .getElementById('embeddedApp')
-          .contentWindow.postMessage(
-            { type: 'getContactsAnswer', data },
-            origin
-          )
       }
     }
 
