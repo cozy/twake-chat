@@ -14,22 +14,30 @@ const extractUrl = url => {
   }
 }
 
-export const useTwakeBridge = origin => {
-  const client = useClient()
-  const navigate = useNavigate()
+const useInitialRedirection = () => {
   const location = useLocation()
 
   useEffect(() => {
-    const destUrl = new URL(document.getElementById('embeddedApp').src)
+    const iframe = document.getElementById('embeddedApp')
+
+    const destUrl = new URL(iframe.src)
     destUrl.pathname = location.pathname
     destUrl.hash = location.hash
     destUrl.search = location.search
-    const currentIframeUrl = new URL(document.getElementById('embeddedApp').src)
+
+    const currentIframeUrl = new URL(iframe.src)
 
     if (destUrl.toString() !== currentIframeUrl.toString()) {
-      document.getElementById('embeddedApp').src = destUrl.toString()
+      iframe.src = destUrl.toString()
     }
   }, [])
+}
+
+export const useTwakeBridge = origin => {
+  const client = useClient()
+  const navigate = useNavigate()
+
+  useInitialRedirection()
 
   useEffect(() => {
     const exposedMethods = {
