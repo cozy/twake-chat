@@ -40,7 +40,7 @@
       "verbs": ["GET"]
     },
     "contacts": {
-      "description": "To demostrate what is possible",
+      "description": "To demonstrate what is possible",
       "type": "io.cozy.contacts",
       "verbs": ["GET"]
     }

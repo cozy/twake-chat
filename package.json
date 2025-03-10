@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cozy/ogma.git"
+    "url": "git+https://github.com/cozy/cozy-twakechat.git"
   },
   "author": "",
   "contributors": [],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/cozy/ogma/issues"
+    "url": "https://github.com/cozy/cozy-twakechat/issues"
   },
-  "homepage": "https://github.com/cozy/ogma#README",
+  "homepage": "https://github.com/cozy/cozy-twakechat#README",
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.11",
     "@babel/polyfill": "^7.12.1",
