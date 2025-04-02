@@ -44,5 +44,10 @@
       "type": "io.cozy.contacts",
       "verbs": ["GET"]
     }
+  },
+  "mobile": {
+    "schema": "twake.chat://openApp",
+    "id_playstore": "app.twake.android.chat",
+    "id_appstore": "twake-chat/id6473384641"
   }
 }
