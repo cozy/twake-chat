@@ -1,9 +1,6 @@
 {
   "name": "twakechat",
   "version": "0.1.0",
-  "engines": {
-    "node": "~16 || ~20"
-  },
   "scripts": {
     "build": "rsbuild build",
     "watch": "rsbuild build --watch --mode development",
