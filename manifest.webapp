@@ -1,7 +1,7 @@
 {
   "name": "Twake Chat",
   "slug": "twakechat",
-  "icon": "twakechat.png",
+  "icon": "assets/twakechat.png",
   "categories": [],
   "version": "0.1.0",
   "licence": "AGPL-3.0",
@@ -32,31 +32,22 @@
     "apps": {
       "description": "Required by the cozy-bar to display the icons of the apps",
       "type": "io.cozy.apps",
-      "verbs": [
-        "GET"
-      ]
+      "verbs": ["GET"]
     },
     "settings": {
       "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
       "type": "io.cozy.settings",
-      "verbs": [
-        "GET"
-      ]
+      "verbs": ["GET"]
     },
     "contacts": {
-      "description": "To demostrate what is possible",
+      "description": "To demonstrate what is possible",
       "type": "io.cozy.contacts",
-      "verbs": [
-        "GET"
-      ]
+      "verbs": ["GET"]
     }
   },
-  "locales": {
-    "en": {},
-    "fr": {}
-  },
-  "langs": [
-    "en",
-    "fr"
-  ]
+  "mobile": {
+    "schema": "twake.chat://openApp",
+    "id_playstore": "app.twake.android.chat",
+    "id_appstore": "twake-chat/id6473384641"
+  }
 }
