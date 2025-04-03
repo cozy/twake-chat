@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 import CozyClient from 'cozy-client'
 import flag from 'cozy-flags'
+import { RealtimePlugin } from 'cozy-realtime'
 import { initTranslation } from 'cozy-ui/transpiled/react/providers/I18n'
 
 import manifest from '../../../manifest.webapp'
@@ -46,6 +47,7 @@ const setupApp = () => {
   const lang = getDataOrDefault(locale, 'en')
   const polyglot = initTranslation(lang, lang => require(`@/locales/${lang}`))
   client.registerPlugin(flag.plugin)
+  client.registerPlugin(RealtimePlugin)
 
   return { root, client, lang, polyglot }
 }
