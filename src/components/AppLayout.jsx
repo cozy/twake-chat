@@ -2,14 +2,17 @@ import React from 'react'
 
 import { BarComponent } from 'cozy-bar'
 import { useExternalBridge } from 'cozy-external-bridge/container'
+import flag from 'cozy-flags'
 
 const AppLayout = () => {
-  useExternalBridge('https://chat.twake.app')
+  const embeddedChatUrl = flag('chat.embedded-app-url')
+
+  useExternalBridge(embeddedChatUrl)
 
   return (
     <>
       <BarComponent />
-      <iframe id="embeddedApp" src="https://chat.twake.app"></iframe>
+      <iframe id="embeddedApp" src={embeddedChatUrl}></iframe>
     </>
   )
 }
