@@ -17,11 +17,8 @@
 <div
   role="application"
   data-cozy="{{.CozyData}}"
-  style="display: flex; height: 0; flex: 0; overflow-x: unset; overflow-y: unset;"
 >
 </div>
-
-<iframe id="embeddedApp" src="https://chat.twake.app/web/"></iframe>
 
 <% htmlPlugin.files.js.forEach(function(file) { %>
   <script defer src="<%- file %>"></script>
