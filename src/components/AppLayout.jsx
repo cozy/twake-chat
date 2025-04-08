@@ -20,6 +20,7 @@ const AppLayout = () => {
           <Typography variant="h5">{client.appMetadata.slug}</Typography>
         </BarCenter>
       )}
+      <iframe id="embeddedApp" src="https://chat.twake.app/web/"></iframe>
     </>
   )
 }
