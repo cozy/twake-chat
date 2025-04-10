@@ -8,7 +8,8 @@
     "analyze": "RSDOCTOR=true yarn build",
     "lint": "yarn lint:js && yarn lint:styles",
     "lint:js": "eslint '{src,test}/**/*.{js,jsx,ts,tsx}'",
-    "lint:styles": "stylint src/styles --config ./.stylintrc"
+    "lint:styles": "stylint src/styles --config ./.stylintrc",
+    "cozyPublish": "cozy-app-publish --token $REGISTRY_TOKEN --prepublish downcloud"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
     "babel-preset-cozy-app": "^2.1.0",
+    "cozy-app-publish": "^0.41.0",
     "cozy-tsconfig": "^1.8.1",
     "eslint": "8.48.0",
     "eslint-config-cozy-app": "6.1.0",
