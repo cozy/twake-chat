@@ -1,12 +1,13 @@
 {
   "name": "Chat",
   "slug": "chat",
-  "icon": "assets/twakechat.png",
-  "categories": [],
   "version": "0.1.0",
+  "type": "webapp",
   "licence": "AGPL-3.0",
-  "editor": "",
-  "source": "",
+  "icon": "assets/twakechat.png",
+  "categories": ["cozy"],
+  "source": "https://github.com/cozy/cozy-twakechat",
+  "editor": "Cozy",
   "developer": {
     "name": "Cozy Cloud",
     "url": "https://cozy.io"
