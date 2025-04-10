@@ -35,12 +35,12 @@
       "verbs": ["GET"]
     },
     "settings": {
-      "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
+      "description": "Required by the cozy-bar to display storage usage",
       "type": "io.cozy.settings",
       "verbs": ["GET"]
     },
     "contacts": {
-      "description": "To demonstrate what is possible",
+      "description": "Required by the cozy-bar to display the avatar",
       "type": "io.cozy.contacts",
       "verbs": ["GET"]
     }
