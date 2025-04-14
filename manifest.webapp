@@ -17,6 +17,11 @@
       "folder": "/",
       "index": "index.html",
       "public": false
+    },
+    "/web": {
+      "folder": "/",
+      "index": "index.html",
+      "public": false
     }
   },
   "permissions": {
