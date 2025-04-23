@@ -1,15 +1,27 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, Outlet } from 'react-router-dom'
 
+import App from '@/components/App'
 import AppLayout from '@/components/AppLayout'
+
+const OutletWrapper = ({ Component }) => (
+  <>
+    <Component />
+    <Outlet />
+  </>
+)
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="*" element={<AppLayout />} />
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<OutletWrapper Component={App} />}>
+            <Route path="bridge/*" />
+          </Route>
+        </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
