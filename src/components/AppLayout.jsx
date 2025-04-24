@@ -11,7 +11,7 @@ const AppLayout = () => {
 
   return (
     <>
-      <BarComponent searchOptions={{ enabled: false }} />
+      <BarComponent />
       <iframe id="embeddedApp" src={embeddedChatUrl}></iframe>
     </>
   )
