@@ -35,6 +35,16 @@
       "description": "Required by the cozy-bar to display the avatar",
       "type": "io.cozy.contacts",
       "verbs": ["GET"]
+    },
+    "chatConversations": {
+      "description": "Required by the cozy Assistant",
+      "type": "io.cozy.ai.chat.conversations",
+      "verbs": ["GET", "POST"]
+    },
+    "chatEvents": {
+      "description": "Required by the cozy Assistant",
+      "type": "io.cozy.ai.chat.events",
+      "verbs": ["GET"]
     }
   },
   "mobile": {
