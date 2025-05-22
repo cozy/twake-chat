@@ -6,9 +6,13 @@ import flag from 'cozy-flags'
 const App = () => {
   const embeddedChatUrl = flag('chat.embedded-app-url')
 
-  useExternalBridge(embeddedChatUrl)
+  const { isReady } = useExternalBridge(embeddedChatUrl)
 
-  return <iframe id="embeddedApp" src={embeddedChatUrl}></iframe>
+  // We can not return null if bridge is not ready because to setup
+  // the bridge we need iframe HTML element
+  return (
+    <iframe id="embeddedApp" src={isReady ? embeddedChatUrl : null}></iframe>
+  )
 }
 
 export default App
