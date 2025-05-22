@@ -6,7 +6,7 @@ import { BarComponent } from 'cozy-bar'
 const AppLayout = () => {
   return (
     <>
-      <BarComponent searchOptions={{ enabled: false }} />
+      <BarComponent />
       <Outlet />
     </>
   )
