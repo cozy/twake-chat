@@ -11,7 +11,11 @@ const App = () => {
   // We can not return null if bridge is not ready because to setup
   // the bridge we need iframe HTML element
   return (
-    <iframe id="embeddedApp" src={isReady ? embeddedChatUrl : null}></iframe>
+    <iframe
+      id="embeddedApp"
+      src={isReady ? embeddedChatUrl : null}
+      allow="clipboard-read; clipboard-write"
+    ></iframe>
   )
 }
 
